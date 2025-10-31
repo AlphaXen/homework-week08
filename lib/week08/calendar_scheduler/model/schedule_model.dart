@@ -16,5 +16,6 @@ ScheduleModel({
 });
 
 ScheduleModel.fromJson({
+  required Map<String, dynamic> json,
   
 })
