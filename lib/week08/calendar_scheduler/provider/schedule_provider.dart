@@ -7,9 +7,17 @@ import 'package:provider/provider.dart';
 class ScheduleProvider extends ChangeNotifier {
   final ScheduleRepository repository; // API 요청 로직을 담은 클래스
 
-  DateTime selectedDate = DateTime.utc(
+  DateTime selectedDate = DateTime.utc( // 선택한 날짜
     DateTime.now().year,
     DateTime.now().month,
     DateTime.now().day,
   );
+
+  Map<DateTime, List<ScheduleModel>> cache = {};
+
+  ScheduleProvider({
+    required this.repository,
+  })  : super() {
+    getSchedules(date: selectedDate);
+  }
 }
