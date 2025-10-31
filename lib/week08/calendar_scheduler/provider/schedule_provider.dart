@@ -13,7 +13,7 @@ class ScheduleProvider extends ChangeNotifier {
     DateTime.now().day,
   );
 
-  Map<DateTime, List<ScheduleModel>> cache = {};
+  Map<DateTime, List<ScheduleModel>> cache = {}; // 일정 정보를 저장해둘 변수
 
   ScheduleProvider({
     required this.repository,
