@@ -101,8 +101,9 @@ void deleteSchedule({
   notifyListeners();
 
   try {
-    await repository.deleteSchedule(id: id);
+    await repository.deleteSchedule(id: id); // 삭제 함수 실행
   } catch(e) {
+    // 삭제 실패 시 실행
     cache.update(
       date,
       (value) => [...value, targetSchedule]..sort(
