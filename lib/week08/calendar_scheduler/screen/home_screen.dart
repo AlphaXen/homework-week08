@@ -6,6 +6,8 @@ import 'package:myapp/week08/calendar_scheduler/component/schedule_bottom_sheet.
 import 'package:myapp/week08/calendar_scheduler/const/color.dart';
 import 'package:get_it/get_it.dart';
 import 'package:myapp/week08/calendar_scheduler/database/drift_database.dart';
+import 'package:myapp/week08/calendar_scheduler/provider/schedule_provider.dart';
+import 'package:provider/provider.dart';
 
 class HomeScreen extends StatelessWidget {
   DateTime selectedDate = DateTime.utc(
@@ -17,7 +19,11 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    
+
+    // 프로바이더 변경이 있을 때마다 
+    final provider = context.watch<ScheduleProvider>();
+
+    final selectedDate = provider.selectedDate;
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         // 새 일정 버튼
