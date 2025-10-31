@@ -18,3 +18,4 @@ ScheduleModel({
 ScheduleModel.fromJson({
   required Map<String, dynamic> json,
 }) : id = json['id'],
+content = json 
