@@ -41,7 +41,7 @@ void createSchedule({
 
   cache.update(
     targetDate,
-    (value) => [
+    (value) => [ // 현존하는 캐시 리스트 끝에 새로운 일정 추가
       ...value,
       schedule.copyWith(
         id: savedSchedule,
@@ -51,7 +51,10 @@ void createSchedule({
         b.startTime,
       ),
     ),
+    // 날짜에 해당되는값이 없다면 새로운 리스트에 새로운 일정 하나만 추가
     ifAbsent: () => [schedule],
   );
+
+  notifyListeners();
 }
 }
