@@ -44,9 +44,20 @@ void createSchedule({
   final newSchedule = schedule.copyWith(
     id: tempId, // 임시 ID를 지정합니다.
   );
+
+  // 긍정적 응답 구간입니다. 서버에서 응답을 받기 전에 캐시를 먼저 업데이트합니다.
   cache.update(
-    tar
-  )
+    targetDate,
+    (value) => [
+      ...value,
+      newSchedule,
+    ]..sort(
+      (a, b) => a.startTime.compareTo(
+        b.startTime,
+      ),
+    ),
+    ifAbsent: () => [newSchedule],
+  );
 
   final savedSchedule = await repository.createSchedule(schedule: schedule);
 
