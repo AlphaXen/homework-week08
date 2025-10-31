@@ -31,5 +31,11 @@ class ScheduleRepository {
     required ScheduleModel schedule,
   }) async {
     final json = schedule.toJson();
+
+    final resp = await _dio.post(_targetUrl, date: json);
+
+    return resp.data?['id'];
   }
+
+  
 }
