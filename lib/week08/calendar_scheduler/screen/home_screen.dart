@@ -111,6 +111,10 @@ class HomeScreen extends StatelessWidget {
     DateTime focusedDate,
     BuildContext context,
   ) {
-    final pro
+    final provider = context.read<ScheduleProvider>();
+    provider.changeSelectedDate(
+      date: selectedDate,
+    );
+    provider.getSchedules(date: selectedDate);
   }
 }
