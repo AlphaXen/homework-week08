@@ -25,6 +25,10 @@ class HomeScreen extends StatelessWidget {
 
     // 선택된 날짜 가져오기
     final selectedDate = provider.selectedDate;
+
+    // 선택된 날짜에 해당되는 일정들 가져오기
+    final schedules = provider.cache[selectedDate] ?? [];
+    
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         // 새 일정 버튼
