@@ -20,9 +20,10 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    // 프로바이더 변경이 있을 때마다 
+    // 프로바이더 변경이 있을 때마다 build() 함수 재실행
     final provider = context.watch<ScheduleProvider>();
 
+    // 선택된 날짜 가져오기
     final selectedDate = provider.selectedDate;
     return Scaffold(
       floatingActionButton: FloatingActionButton(
