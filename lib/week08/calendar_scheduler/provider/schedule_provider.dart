@@ -67,7 +67,11 @@ void createSchedule({
     cache.update(
       targetDate,
       (value) => value
-        .map((e) => e.id == tempId ? e.)
+        .map((e) => e.id == tempId
+          ? e.copyWith(
+            id: savedSchedule,
+          )
+          )
     )
   }
 
