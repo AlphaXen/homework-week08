@@ -58,6 +58,17 @@ void createSchedule({
     ),
     ifAbsent: () => [newSchedule],
   );
+  notifyListeners();
+
+  try {
+    // API 요청을 합니다.
+    final savedSchedule = await repository.createSchedule(schedule: schedule);
+
+    cache.update(
+      targetDate,
+      (value)
+    )
+  }
 
   final savedSchedule = await repository.createSchedule(schedule: schedule);
 
