@@ -23,4 +23,6 @@ ScheduleModel.fromJson({
 content = json['content'],
 date = DateTime.parse(json['date']),
 StartTime = json['startTime'],
-endTime = json
+endTime = json['endTime'];
+
+Map<String
