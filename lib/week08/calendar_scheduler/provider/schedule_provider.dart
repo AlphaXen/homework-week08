@@ -25,5 +25,5 @@ class ScheduleProvider extends ChangeNotifier {
 void getSchedules({
   required DateTime date,
 }) async {
-  final resp
+  final resp = await repository.getSchedules(date: date);
 }
