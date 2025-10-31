@@ -30,6 +30,7 @@ Map<String, dynamic> toJson() {
     'id' : id,
     'content' : content,
     'date' :
-    '${date.year}${date.month.toString().padLeft(2, '0')}'
+    '${date.year}${date.month.toString().padLeft(2, '0')}$
+    {date.day.toString().padF}'
   }
 }
