@@ -1,3 +1,5 @@
+import 'package:provider/provider.dart';
+
 class ScheduleModel {
   final String id;
   final String content;
@@ -18,4 +20,7 @@ ScheduleModel({
 ScheduleModel.fromJson({
   required Map<String, dynamic> json,
 }) : id = json['id'],
-content = json 
+content = json['content'],
+date = DateTime.parse(json['date']),
+StartTime = json['startTime'],
+endTime = json
