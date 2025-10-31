@@ -57,4 +57,16 @@ void createSchedule({
 
   notifyListeners();
 }
+
+void deleteSchedule({
+  required DateTime date,
+  required String id,
+}) async {
+  final resp = await repository.deleteSchedule(id: id);
+
+  cache.update(
+    date,
+    (value) => value.where
+  )
+}
 }
