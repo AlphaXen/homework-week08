@@ -18,7 +18,7 @@ class ScheduleRepository {
       },
     );
 
-    return resp.data // 
+    return resp.data // 모델 인스턴스로 데이터 매핑하기
     .map<ScheduleModel>(
       (x) => ScheduleModel.fromJson(
         json: x,
