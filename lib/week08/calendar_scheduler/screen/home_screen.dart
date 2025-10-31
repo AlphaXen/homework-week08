@@ -80,11 +80,10 @@ class HomeScreen extends StatelessWidget {
                         child: ScheduleCard(
                           startTime: schedule.startTime,
                           endTime: schedule.endTime,
-                          content: ,
-                        )
+                          content: schedule.content,
+                        ),
                       ),
-                    ),
-                  )
+                    );
                 },
               ),
             )
