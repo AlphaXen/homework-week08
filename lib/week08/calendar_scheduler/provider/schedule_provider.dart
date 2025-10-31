@@ -71,8 +71,9 @@ void createSchedule({
           ? e.copyWith(
             id: savedSchedule,
           )
-          )
-    )
+        :e)
+        .toList(),
+    );
   }
 
   final savedSchedule = await repository.createSchedule(schedule: schedule);
