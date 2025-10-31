@@ -13,7 +13,9 @@ class ScheduleRepository {
   }) async {
     final resp = await _dio.get(
       _targetUrl,
-      queryParameters
+      queryParameters: {
+        'date': '${date.year}${date.month.toString().padLeft(2, '0')}'
+      }
     )
   }
 
