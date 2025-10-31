@@ -96,7 +96,7 @@ void deleteSchedule({
     date,
     (value) => value.where((e) => e.id != id).toList(),
     ifAbsent: () => [],
-  );
+  ); // 긍정적 응답 (응답 전에 캐시 먼저 업데이트)
 
   notifyListeners();
 }
