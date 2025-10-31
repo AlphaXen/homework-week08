@@ -18,7 +18,7 @@ void main() async {
   // GetIt에 데이터베이스 변수 주입하기
 
   final repository = ScheduleRepository();
-  final ScheduleProvider = =ScheduleProvider(repository: repository);
+  final scheduleProvider = ScheduleProvider(repository: repository);
 
   runApp(MaterialApp(home: HomeScreen()));
 }
