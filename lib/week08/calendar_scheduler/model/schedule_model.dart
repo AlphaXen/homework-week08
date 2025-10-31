@@ -6,12 +6,10 @@ class ScheduleModel {
   final DateTime date;
   final int startTime;
   final int endTime;
-}
 
 ScheduleModel({
   required this.id,
   required this.content,
-  required this.date,
   required this.date,
   required this.startTime,
   required this.endTime,
@@ -22,7 +20,7 @@ ScheduleModel.fromJson({ // JSON으로부터 모델을 만들어내는 생성자
 }) : id = json['id'],
 content = json['content'],
 date = DateTime.parse(json['date']),
-StartTime = json['startTime'],
+startTime = json['startTime'],
 endTime = json['endTime'];
 
 Map<String, dynamic> toJson() { // 모델을 다시 JSON으로 변환
@@ -31,7 +29,7 @@ Map<String, dynamic> toJson() { // 모델을 다시 JSON으로 변환
     'content' : content,
     'date' :
     '${date.year}${date.month.toString().padLeft(2, '0')}${date.day.toString().padLeft(2, '0')}',
-    'startTime' : StartTime,
+    'startTime' : startTime,
     'endTime' : endTime,
   };
 }
@@ -51,4 +49,4 @@ ScheduleModel copyWith({
     endTime: endTime ?? this.endTime,
   );
 }
-
+}
