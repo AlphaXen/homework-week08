@@ -17,6 +17,7 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         // 새 일정 버튼
@@ -123,9 +124,5 @@ class HomeScreen extends StatelessWidget {
   }
 
   void onDaySelected(DateTime selectedDate, DateTime focusedDate) {
-    // 날짜가 선택될 때마다 실행할 함수
-    setState(() {
-      this.selectedDate = selectedDate;
-    });
   }
 }
