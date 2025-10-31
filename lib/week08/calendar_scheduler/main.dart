@@ -21,7 +21,7 @@ void main() async {
   final scheduleProvider = ScheduleProvider(repository: repository);
 
   runApp(
-    ChangeNotifierProvider(
+    ChangeNotifierProvider( // Provider 하위 위젯에 제공하기
       create: (_) => scheduleProvider,
       child: MaterialApp(
         home: HomeScreen(),
