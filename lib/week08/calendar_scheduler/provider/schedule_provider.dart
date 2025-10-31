@@ -40,7 +40,10 @@ void createSchedule({
 
   final uuid = Uuid();
 
-  final tempID
+  final tempId = uuid.v4(); // 유일한 ID값을 생성합니다.
+  final newSchedule = schedule.copyWith(
+    id: tempId, // 임시 ID를 지정합니다.
+  );
 
   final savedSchedule = await repository.createSchedule(schedule: schedule);
 
