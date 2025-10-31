@@ -71,6 +71,15 @@ class HomeScreen extends StatelessWidget {
                   return Dismissible(
                     key: ObjectKey(schedule.id),
                     direction: DismissDirection.startToEnd,
+                    onDismissed: (DismissDirection direction) {
+                      provider.deleteSchedule(date: selectedDate, id: schdule.id);
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.only(
+                        bottom: 8.0, left: 8.0, right: 8.0,
+                        child: 
+                      ),
+                    ),
                   )
                 },
               ),
