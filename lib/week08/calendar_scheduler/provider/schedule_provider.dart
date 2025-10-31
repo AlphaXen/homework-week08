@@ -113,6 +113,7 @@ void deleteSchedule({
       ),
     );
   }
+  notifyListeners();
 }
 
 void changeSelectedDate({
