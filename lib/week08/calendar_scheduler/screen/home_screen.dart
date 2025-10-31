@@ -69,7 +69,8 @@ class HomeScreen extends StatelessWidget {
                   final Schedule = schedules[index];
 
                   return Dismissible(
-                    key: ObjectKey()
+                    key: ObjectKey(schedule.id),
+                    direction: DismissDirection.startToEnd,
                   )
                 },
               ),
