@@ -74,6 +74,11 @@ void createSchedule({
         :e)
         .toList(),
     );
+  } catch(e) {
+    cache.update(
+      targetDate,
+      (value) => value.where((e) => e.id != tempId).toList(),
+    );
   }
 
   final savedSchedule = await repository.createSchedule(schedule: schedule);
