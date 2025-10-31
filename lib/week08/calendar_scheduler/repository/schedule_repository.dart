@@ -37,5 +37,9 @@ class ScheduleRepository {
     return resp.data?['id'];
   }
 
-  
+  Future<String> deleteSchedule({
+    required String id,
+  }) async {
+    final resp = await _dio.delete
+  }
 }
