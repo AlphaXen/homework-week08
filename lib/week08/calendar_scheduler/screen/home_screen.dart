@@ -69,7 +69,7 @@ class HomeScreen extends StatelessWidget {
                   final Schedule = schedules[index];
 
                   return Dismissible(
-                    key: ObjectKey(schedules[index])
+                    key: ObjectKey()
                   )
                 },
               ),
