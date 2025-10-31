@@ -38,6 +38,10 @@ void createSchedule({
 }) async {
   final targetDate = schedule.date;
 
+  final uuid = Uuid();
+
+  final tempID
+
   final savedSchedule = await repository.createSchedule(schedule: schedule);
 
   cache.update(
