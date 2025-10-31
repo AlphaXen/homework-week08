@@ -48,6 +48,7 @@ ScheduleModel copyWith({
     content: content ?? this.content,
     date: date ?? this. date,
     startTime: startTime ?? this.startTime,
-  )
+    endTime: endTime ?? this.endTime,
+  );
 }
 
