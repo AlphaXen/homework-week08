@@ -106,6 +106,10 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  void onDaySelected(DateTime selectedDate, DateTime focusedDate) {
+  void onDaySelected(
+    DateTime selectedDate,
+    DateTime focusedDate,
+    BuildContext context,
+  ) {
   }
 }
