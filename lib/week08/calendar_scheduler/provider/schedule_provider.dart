@@ -64,9 +64,12 @@ void deleteSchedule({
 }) async {
   final resp = await repository.deleteSchedule(id: id);
 
-  cache.update(
+  cache.update( // 캐시에서 데이터 삭제
     date,
-    (value) => value.where
-  )
+    (value) => value.where((e) => e.id != id).toList(),
+    ifAbsent: () => [],
+  );
+
+  notifyListeners();
 }
 }
