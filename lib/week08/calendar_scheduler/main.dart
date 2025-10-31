@@ -1,3 +1,5 @@
+import 'package:myapp/week08/calendar_scheduler/provider/schedule_provider.dart';
+import 'package:myapp/week08/calendar_scheduler/repository/schedule_repository.dart';
 import 'package:myapp/week08/calendar_scheduler/screen/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/date_symbol_data_local.dart';
@@ -14,6 +16,9 @@ void main() async {
 
   GetIt.I.registerSingleton<LocalDatabase>(database);
   // GetIt에 데이터베이스 변수 주입하기
+
+  final repository = ScheduleRepository();
+  final ScheduleProvider = =ScheduleProvider(repository: repository);
 
   runApp(MaterialApp(home: HomeScreen()));
 }
