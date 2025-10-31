@@ -36,5 +36,16 @@ Map<String, dynamic> toJson() { // 모델을 다시 JSON으로 변환
   };
 }
 
-ScheduleModel copyWith
+ScheduleModel copyWith({
+  String? id,
+  String? content,
+  DateTime? date,
+  int? startTime,
+  int? endTime,
+}) {
+  return ScheduleModel(
+    id: id ?? this.id,
+    content: 
+  )
+}
 
