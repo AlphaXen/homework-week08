@@ -20,5 +20,12 @@ void main() async {
   final repository = ScheduleRepository();
   final scheduleProvider = ScheduleProvider(repository: repository);
 
-  runApp(MaterialApp(home: HomeScreen()));
+  runApp(
+    ChangeNotifierProvider(
+      create: (_) => scheduleProvider,
+      child: MaterialApp(
+        home: HomeScreen(),
+      ),
+    ),
+  );
 }
