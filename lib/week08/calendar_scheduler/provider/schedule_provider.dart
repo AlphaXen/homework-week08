@@ -9,6 +9,7 @@ class ScheduleProvider extends ChangeNotifier {
 
   DateTime selectedDate = DateTime.utc(
     DateTime.now().year,
-    
-  )
+    DateTime.now().month,
+    DateTime.now().day,
+  );
 }
