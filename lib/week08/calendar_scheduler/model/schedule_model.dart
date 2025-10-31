@@ -17,7 +17,7 @@ ScheduleModel({
   required this.endTime,
 });
 
-ScheduleModel.fromJson({
+ScheduleModel.fromJson({ // JSON으로부터 모델을 만들어내는 생성자
   required Map<String, dynamic> json,
 }) : id = json['id'],
 content = json['content'],
@@ -25,7 +25,7 @@ date = DateTime.parse(json['date']),
 StartTime = json['startTime'],
 endTime = json['endTime'];
 
-Map<String, dynamic> toJson() {
+Map<String, dynamic> toJson() { // 모델을 다시 JSON으로 변환
   return {
     'id' : id,
     'content' : content,
