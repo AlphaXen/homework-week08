@@ -66,7 +66,8 @@ void createSchedule({
 
     cache.update(
       targetDate,
-      (value)
+      (value) => value
+        .map((e) => e.id == tempId ? e.)
     )
   }
 
