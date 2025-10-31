@@ -21,3 +21,9 @@ class ScheduleProvider extends ChangeNotifier {
     getSchedules(date: selectedDate);
   }
 }
+
+void getSchedules({
+  required DateTime date,
+}) async {
+  final resp
+}
