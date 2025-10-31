@@ -66,13 +66,13 @@ class HomeScreen extends StatelessWidget {
               child: ListView.builder(
                 itemCount: schedules.length,
                 itemBuilder: (context, index){
-                  final Schedule = schedules[index];
+                  final schedule = schedules[index];
 
                   return Dismissible(
                     key: ObjectKey(schedule.id),
                     direction: DismissDirection.startToEnd,
                     onDismissed: (DismissDirection direction) {
-                      provider.deleteSchedule(date: selectedDate, id: schdule.id);
+                      provider.deleteSchedule(date: selectedDate, id: schedule.id);
                     },
                     child: Padding(
                       padding: const EdgeInsets.only(
