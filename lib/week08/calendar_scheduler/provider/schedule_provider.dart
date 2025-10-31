@@ -44,6 +44,9 @@ void createSchedule({
   final newSchedule = schedule.copyWith(
     id: tempId, // 임시 ID를 지정합니다.
   );
+  cache.update(
+    tar
+  )
 
   final savedSchedule = await repository.createSchedule(schedule: schedule);
 
