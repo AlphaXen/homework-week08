@@ -25,4 +25,6 @@ date = DateTime.parse(json['date']),
 StartTime = json['startTime'],
 endTime = json['endTime'];
 
-Map<String
+Map<String, dynamic> toJson() {
+  
+}
