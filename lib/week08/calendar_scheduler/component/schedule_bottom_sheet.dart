@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:drift/drift.dart' hide Column;
 import 'package:get_it/get_it.dart';
 import 'package:myapp/week08/calendar_scheduler/database/drift_database.dart';
+import 'package:myapp/week08/calendar_scheduler/model/schedule_model.dart';
+import 'package:myapp/week08/calendar_scheduler/provider/schedule_provider.dart';
 import 'package:provider/provider.dart';
 
 class ScheduleBottomSheet extends StatefulWidget {
@@ -113,11 +115,13 @@ class _ScheduleBottomState extends State<ScheduleBottomSheet> {
       // 폼 검증하기
       formKey.currentState!.save(); // 폼 저장하기
 
-      await GetIt.I<LocalDatabase>().createSchedule(
-        SchedulesCompanion(
-          startTime: Value(startTime!),
-          endTime: Value(endTime!),
-          date: Value(widget.selectedDate),
+      context.read<ScheduleProvider>().createSchedule(
+        schedule: ScheduleModel(
+          id: 'new_model', // 임시 id
+          content: content!,
+          date: widget.selectedDate,
+          startTime: startTime!
+          endTime: endTime!,
         ),
       );
 
