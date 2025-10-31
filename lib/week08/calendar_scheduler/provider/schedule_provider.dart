@@ -99,6 +99,11 @@ void deleteSchedule({
   ); // 긍정적 응답 (응답 전에 캐시 먼저 업데이트)
 
   notifyListeners();
+
+  try {
+    await repository.deleteSchedule(id: id);
+    
+  }
 }
 
 void changeSelectedDate({
