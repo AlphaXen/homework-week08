@@ -64,7 +64,14 @@ class HomeScreen extends StatelessWidget {
 
             Expanded(
               child: ListView.builder(
-                itemCount: ,
+                itemCount: schedules.length,
+                itemBuilder: (context, index){
+                  final Schedule = schedules[index];
+
+                  return Dismissible(
+                    key: ObjectKey(schedules[index])
+                  )
+                },
               ),
             )
             TodayBanner(
