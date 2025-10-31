@@ -7,5 +7,10 @@ class ScheduleModel {
 }
 
 ScheduleModel({
-  required
-})
+  required this.id,
+  required this.content,
+  required this.date,
+  required this.date,
+  required this.startTime,
+  required this.endTime,
+});
