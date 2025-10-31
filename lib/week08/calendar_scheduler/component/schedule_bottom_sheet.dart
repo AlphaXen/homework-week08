@@ -120,7 +120,7 @@ class _ScheduleBottomState extends State<ScheduleBottomSheet> {
           id: 'new_model', // 임시 id
           content: content!,
           date: widget.selectedDate,
-          startTime: startTime!
+          startTime: startTime!,
           endTime: endTime!,
         ),
       );
