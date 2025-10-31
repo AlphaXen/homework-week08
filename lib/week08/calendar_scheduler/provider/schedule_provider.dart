@@ -38,5 +38,20 @@ void createSchedule({
   final targetDate = schedule.date;
 
   final savedSchedule = await repository.createSchedule(schedule: schedule);
+
+  cache.update(
+    targetDate,
+    (value) => [
+      ...value,
+      schedule.copyWith(
+        id: savedSchedule,
+      ),
+    ].. sort(
+      (a, b) => a.startTime.compareTo(
+        b.startTime,
+      ),
+    ),
+    ifAbsent: () => [schedule],
+  );
 }
 }
