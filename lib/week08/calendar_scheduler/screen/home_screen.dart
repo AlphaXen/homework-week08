@@ -86,7 +86,8 @@ class HomeScreen extends StatelessWidget {
                     );
                 },
               ),
-            )
+            ),
+            
             TodayBanner(
               // 배너 추가하기
               selectedDate: selectedDate,
