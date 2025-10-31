@@ -42,5 +42,7 @@ class ScheduleRepository {
   }) async {
     final resp = await _dio.delete(_targetUrl, data: { // 삭제된 ID값
       'id' : id});
+
+      return resp.data?['id']; // 삭제된 ID값 반환
   }
 }
