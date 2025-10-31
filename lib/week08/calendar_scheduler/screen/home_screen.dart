@@ -61,6 +61,51 @@ class HomeScreen extends StatelessWidget {
             ),
             SizedBox(height: 8.0),
             SizedBox(height: 8.0),
+            Expanded(
+              // 남는 공간을 모두 차지하기
+              // 일정 정보가 Stream으로 제공되기 때문에 StreamBuilder 사용
+              child: StreamBuilder<List<Schedule>>(
+                stream: GetIt.I<LocalDatabase>().watchSchedules(selectedDate),
+                builder: (context, snapshot) {
+                  if (!snapshot.hasData) {
+                    // 데이터가 없을 때
+                    return Container();
+                  }
+                  // 화면에 보이는 값들만 렌더링하는 리스트
+                  return ListView.builder(
+                    // 리스트에 입력할 값들의 총 개수
+                    itemCount: snapshot.data!.length,
+                    itemBuilder: (context, index) {
+                      // 현재 index에 해당되는 일정
+                      final schedule = snapshot.data![index];
+
+                      return Dismissible(
+                        key: ObjectKey(schedule.id), // 유니크한 키값
+                        direction: DismissDirection.startToEnd,
+                        // 밀기 방향(왼쪽에서 오른쪽으로)
+                        onDismissed: (DismissDirection direction) {
+                          // 밀기 했을 때 실행할 함수
+                          GetIt.I<LocalDatabase>().removeSchedule(schedule.id);
+                        },
+                        child: Padding(
+                          // 좌우로 패딩을 추가해서 UI 개선
+                          padding: const EdgeInsets.only(
+                            bottom: 8.0,
+                            left: 8.0,
+                            right: 8.0,
+                          ),
+                          child: ScheduleCard(
+                            startTime: schedule.startTime,
+                            endTime: schedule.endTime,
+                            content: schedule.content,
+                          ),
+                        ),
+                      );
+                    },
+                  );
+                },
+              ),
+            ),
             TodayBanner(
               // 배너 추가하기
               selectedDate: selectedDate,
