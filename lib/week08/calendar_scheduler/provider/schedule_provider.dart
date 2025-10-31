@@ -31,4 +31,12 @@ void getSchedules({
 
   notifyListeners(); // 리슨하는 위젯들 업데이트하기
 }
+
+void createSchedule({
+  required ScheduleModel schedule,
+}) async {
+  final targetDate = schedule.date;
+
+  final savedSchedule = await repository.createSchedule(schedule: schedule);
+}
 }
