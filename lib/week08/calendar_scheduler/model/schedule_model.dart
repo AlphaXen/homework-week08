@@ -14,3 +14,7 @@ ScheduleModel({
   required this.startTime,
   required this.endTime,
 });
+
+ScheduleModel.fromJson({
+  
+})
