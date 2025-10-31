@@ -45,7 +45,9 @@ ScheduleModel copyWith({
 }) {
   return ScheduleModel(
     id: id ?? this.id,
-    content: 
+    content: content ?? this.content,
+    date: date ?? this. date,
+    startTime: startTime ?? this.startTime,
   )
 }
 
