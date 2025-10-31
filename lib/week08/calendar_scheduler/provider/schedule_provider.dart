@@ -58,13 +58,13 @@ void createSchedule({
     ),
     ifAbsent: () => [newSchedule],
   );
-  notifyListeners();
+  notifyListeners(); // 캐시 업데이트 반영하기
 
   try {
     // API 요청을 합니다.
     final savedSchedule = await repository.createSchedule(schedule: schedule);
 
-    cache.update(
+    cache.update( // 서버 응답 기반으로 캐시 업데이트
       targetDate,
       (value) => value
         .map((e) => e.id == tempId
@@ -75,7 +75,7 @@ void createSchedule({
         .toList(),
     );
   } catch(e) {
-    cache.update(
+    cache.update( // 일정 생성 실패 시 롤백하기
       targetDate,
       (value) => value.where((e) => e.id != tempId).toList(),
     );
