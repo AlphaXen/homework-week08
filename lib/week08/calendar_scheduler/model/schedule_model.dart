@@ -34,7 +34,7 @@ Map<String, dynamic> toJson() { // 모델을 다시 JSON으로 변환
   };
 }
 
-ScheduleModel copyWith({
+ScheduleModel copyWith({ // 현재 모델을 특정 속성만 변환하여 새로 작성
   String? id,
   String? content,
   DateTime? date,
