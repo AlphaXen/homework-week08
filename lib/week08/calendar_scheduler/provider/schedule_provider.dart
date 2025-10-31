@@ -20,7 +20,6 @@ class ScheduleProvider extends ChangeNotifier {
   })  : super() {
     getSchedules(date: selectedDate);
   }
-}
 
 void getSchedules({
   required DateTime date,
@@ -31,4 +30,5 @@ void getSchedules({
   cache.update(date, (value) => resp, ifAbsent: () => resp);
 
   notifyListeners(); // 리슨하는 위젯들 업데이트하기
+}
 }
