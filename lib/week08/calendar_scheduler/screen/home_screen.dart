@@ -60,16 +60,6 @@ class HomeScreen extends StatelessWidget {
               onDaySelected: onDaySelected, // 선택된 날짜
             ),
             SizedBox(height: 8.0),
-            StreamBuilder<List<Schedule>>(
-              // 일정 Stream으로 받아오기
-              stream: GetIt.I<LocalDatabase>().watchSchedules(selectedDate),
-              builder: (context, snapshot) {
-                return TodayBanner(
-                  selectedDate: selectedDate,
-                  count: snapshot.data?.length ?? 0, // 일정 개수 입력해주기
-                );
-              },
-            ),
             SizedBox(height: 8.0),
             Expanded(
               // 남는 공간을 모두 차지하기
