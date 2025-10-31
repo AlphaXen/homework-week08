@@ -32,7 +32,7 @@ class ScheduleRepository {
   }) async {
     final json = schedule.toJson(); // JSON으로 변환
 
-    final resp = await _dio.post(_targetUrl, date: json);
+    final resp = await _dio.post(_targetUrl, data: json);
 
     return resp.data?['id'];
   }
