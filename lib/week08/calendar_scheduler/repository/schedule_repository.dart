@@ -26,4 +26,10 @@ class ScheduleRepository {
     )
     .toList();
   }
+
+  Future<String> createSchedule({
+    required ScheduleModel schedule,
+  }) async {
+    final json = schedule.toJson();
+  }
 }
