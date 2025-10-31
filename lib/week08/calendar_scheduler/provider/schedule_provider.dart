@@ -74,6 +74,9 @@ void deleteSchedule({
 }
 
 void changeSelectedDate({
-  
-})
+  required DateTime date,
+}) {
+  selectedDate = date,
+  notifyListeners();
+}
 }
